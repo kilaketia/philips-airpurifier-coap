@@ -2097,6 +2097,132 @@ class PhilipsCX3550(PhilipsNew2GenericFan):
     AVAILABLE_SWITCHES: ClassVar = [PhilipsApi.NEW2_BEEP]
     AVAILABLE_SELECTS: ClassVar = [PhilipsApi.NEW2_TIMER2]
 
+class PhilipsCX7550(PhilipsNew2GenericFan):
+    """CX7550."""
+
+    AVAILABLE_PRESET_MODES: ClassVar = {
+        PresetMode.LOW: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 1,
+            PhilipsApi.NEW2_MODE_C: 1,
+        },
+        PresetMode.MEDIUM: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 6,
+            PhilipsApi.NEW2_MODE_C: 2,
+        },
+        PresetMode.HIGH: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 12,
+            PhilipsApi.NEW2_MODE_C: 3,
+        },
+        PresetMode.NATURAL: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: -126,
+            PhilipsApi.NEW2_MODE_C: 1,
+        },
+        PresetMode.SLEEP: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 17,
+            PhilipsApi.NEW2_MODE_C: 2,
+        },
+        PresetMode.AUTO: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 0,
+            PhilipsApi.NEW2_MODE_C: 6,
+        },
+    }
+    AVAILABLE_SPEEDS: ClassVar = {
+        PresetMode.SPEED_1: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 1,
+            PhilipsApi.NEW2_MODE_C: 1,
+        },
+        PresetMode.SPEED_2: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 2,
+            PhilipsApi.NEW2_MODE_C: 2,
+        },
+        PresetMode.SPEED_3: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 3,
+            PhilipsApi.NEW2_MODE_C: 3,
+        },
+        PresetMode.SPEED_4: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 4,
+            PhilipsApi.NEW2_MODE_C: 4,
+        },
+        PresetMode.SPEED_5: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 5,
+            PhilipsApi.NEW2_MODE_C: 5,
+        },
+        PresetMode.SPEED_6: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 6,
+            PhilipsApi.NEW2_MODE_C: 6,
+        },
+        PresetMode.SPEED_7: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 7,
+            PhilipsApi.NEW2_MODE_C: 7,
+        },
+        PresetMode.SPEED_8: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 8,
+            PhilipsApi.NEW2_MODE_C: 8,
+        },
+        PresetMode.SPEED_9: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 9,
+            PhilipsApi.NEW2_MODE_C: 9,
+        },
+        PresetMode.SPEED_10: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 10,
+            PhilipsApi.NEW2_MODE_C: 10,
+        },
+        PresetMode.SPEED_11: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 11,
+            PhilipsApi.NEW2_MODE_C: 11,
+        },
+        PresetMode.SPEED_12: {
+            PhilipsApi.NEW2_POWER: 1,
+            PhilipsApi.NEW2_MODE_A: 1,
+            PhilipsApi.NEW2_MODE_B: 12,
+            PhilipsApi.NEW2_MODE_C: 12,
+        },
+    }
+    KEY_OSCILLATION: ClassVar = {
+        PhilipsApi.NEW2_OSCILLATION: PhilipsApi.OSCILLATION_MAP5,
+    }
+    AVAILABLE_LIGHTS: ClassVar = [PhilipsApi.NEW2_DISPLAY_BACKLIGHT4]
+
+    AVAILABLE_SWITCHES: ClassVar = [PhilipsApi.NEW2_BEEP]
+    AVAILABLE_SELECTS: ClassVar = [PhilipsApi.NEW2_TIMER2]
+# TODO : 
+# - Show color temps and show temps while sleeping toggles ? 
+# set D03104=0 do toggle off the show temperature color setting, but 100 doesn't 
+# Same to show the temperature while the device is sleeping (D03133 0/1)
 
 class PhilipsHU1509(PhilipsNew2GenericFan):
     """HU1509."""
@@ -2233,6 +2359,7 @@ model_to_class = {
     FanModel.CX3120: PhilipsCX3120,
     FanModel.CX5120: PhilipsCX5120,
     FanModel.CX3550: PhilipsCX3550,
+    FanModel.CX7550: PhilipsCX7550,
     FanModel.HU1509: PhilipsHU1510,
     FanModel.HU1510: PhilipsHU1510,
     FanModel.HU5710: PhilipsHU5710,

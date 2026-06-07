@@ -168,6 +168,7 @@ class FanModel(StrEnum):
     CX3120 = "CX3120"
     CX3550 = "CX3550"
     CX5120 = "CX5120"
+    CX7550 = "CX7550"
     HU1509 = "HU1509"
     HU1510 = "HU1510"
     HU5710 = "HU5710"
@@ -187,6 +188,8 @@ class PresetMode:
     SPEED_8 = "speed_8"
     SPEED_9 = "speed_9"
     SPEED_10 = "speed_10"
+    SPEED_11 = "speed_11"
+    SPEED_12 = "speed_12"
     ALLERGEN = "allergen"
     AUTO = "auto"
     AUTO_GENERAL = "auto_general"
@@ -218,6 +221,8 @@ class PresetMode:
         SPEED_8: "pap:fan_speed_button",
         SPEED_9: "pap:fan_speed_button",
         SPEED_10: "pap:fan_speed_button",
+        SPEED_11: "pap:fan_speed_button",
+        SPEED_12: "pap:fan_speed_button",
         ALLERGEN: "pap:allergen_mode",
         AUTO: "pap:auto_mode_button",
         AUTO_GENERAL: "pap:auto_mode_button",
@@ -432,6 +437,10 @@ class PhilipsApi:
     # Heater models (e.g., CX5120) use this map
     OSCILLATION_MAP4: ClassVar = {
         SWITCH_ON: 17222,
+        SWITCH_OFF: 0,
+    }
+    OSCILLATION_MAP5: ClassVar = {
+        SWITCH_ON: 80,
         SWITCH_OFF: 0,
     }
 
