@@ -2111,13 +2111,13 @@ class PhilipsCX7550(PhilipsNew2GenericFan):
             PhilipsApi.NEW2_POWER: 1,
             PhilipsApi.NEW2_MODE_A: 1,
             PhilipsApi.NEW2_MODE_B: 6,
-            PhilipsApi.NEW2_MODE_C: 2,
+            PhilipsApi.NEW2_MODE_C: 6,
         },
         PresetMode.HIGH: {
             PhilipsApi.NEW2_POWER: 1,
             PhilipsApi.NEW2_MODE_A: 1,
-            PhilipsApi.NEW2_MODE_B: 12,
-            PhilipsApi.NEW2_MODE_C: 3,
+            PhilipsApi.NEW2_MODE_B: 82,
+            PhilipsApi.NEW2_MODE_C: 82,
         },
         PresetMode.NATURAL: {
             PhilipsApi.NEW2_POWER: 1,
@@ -2202,14 +2202,14 @@ class PhilipsCX7550(PhilipsNew2GenericFan):
         PresetMode.SPEED_11: {
             PhilipsApi.NEW2_POWER: 1,
             PhilipsApi.NEW2_MODE_A: 1,
-            PhilipsApi.NEW2_MODE_B: 11,
-            PhilipsApi.NEW2_MODE_C: 11,
+            PhilipsApi.NEW2_MODE_B: 81,
+            PhilipsApi.NEW2_MODE_C: 81,
         },
         PresetMode.SPEED_12: {
             PhilipsApi.NEW2_POWER: 1,
             PhilipsApi.NEW2_MODE_A: 1,
-            PhilipsApi.NEW2_MODE_B: 12,
-            PhilipsApi.NEW2_MODE_C: 12,
+            PhilipsApi.NEW2_MODE_B: 82,
+            PhilipsApi.NEW2_MODE_C: 82,
         },
     }
     KEY_OSCILLATION: ClassVar = {
